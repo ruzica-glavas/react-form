@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const list = [`Pane`, `Formaggio`, `Latte`]
+const list = [ `Pane`, `Formaggio`, `Latte`]
 
 function App() {
 
@@ -34,8 +34,8 @@ function App() {
       {/* Lista dei Items*/}
 
       <ul>
-          {items.map((element, index )=> (
-            <li key={index}>{element}</li>
+          {items.map((item, index )=> (
+            <li key={index}>{item}</li>
           ))}     
       </ul>
     
