@@ -1,11 +1,12 @@
+import { useState } from "react"
 
+const list = [``]
 
 function App() {
-  const [count, setCount] = useState(0)
-
+ 
   return (
     <>
-    
+      <h1>Lista di Articoli</h1>
     
     </>
      
