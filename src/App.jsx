@@ -7,6 +7,7 @@ function App() {
   const [items, setItems] = useState (list)
   const [newItem, setNewItem] = useState(``)
 
+  {/* Clonaggio array per aggiungere un nuovo Item */}
   const addItem =e => {
     e.preventDefault();
     const article = newItem.trim();
@@ -18,6 +19,17 @@ function App() {
     Se lo scrivo in questo modo, nell'input mi rimane l'ultima cosa che ho aggiunto
     */}
   }
+
+  {/* Clonaggio array per rimuovere un Item */}
+
+  const removeItem = (indiceElementoArray) => {
+    const updateItems = items.filter((item, index) =>{
+      return index !== indiceElementoArray
+    });
+    setItems (updateItems);
+  }
+
+
 
 {/* Serve per non far ricaricare la pagina */}
  const handleSubmit = event => {
@@ -35,7 +47,7 @@ function App() {
 
       <ul>
           {items.map((item, index )=> (
-            <li key={index}>{item}</li>
+            <li key={index}><span>{item}</span><button onClick={() => removeItem (index)}>X</button></li>
           ))}     
       </ul>
     
@@ -51,6 +63,7 @@ function App() {
         </input>
         <button>Invia</button>
       </form>
+      
     </>
      
     )
